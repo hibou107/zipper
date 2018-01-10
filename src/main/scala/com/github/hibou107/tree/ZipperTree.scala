@@ -1,4 +1,4 @@
-package com.github.hibou107
+package com.github.hibou107.tree
 
 sealed trait Tree[A]
 
@@ -38,6 +38,9 @@ case class ZipperTree[A](lefts: Tree[A], v: A, rights: Tree[A], context: Context
 }
 
 object ZipperTree {
+
+
+
   def create[A](tree: Tree[A]): ZipperTree[A] = {
     tree match {
       case Empty() => throw new RuntimeException("Cannot create Zipper of empty tree")
